@@ -21,7 +21,7 @@ class AddBeer extends Component {
         return (
             <Form className="add-brewery">
                 <h4>Add Beer</h4>
-                <Form.Group as={Col} controlId="add-beer-brewery">
+                <Form.Group controlId="add-beer-brewery">
                     <Form.Label>Brewery</Form.Label>
                     <Form.Control as="select">
                         <option>Choose...</option>
