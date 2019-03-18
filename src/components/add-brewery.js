@@ -41,19 +41,11 @@ class AddBrewery extends Component {
                     </Form.Group>
 
                     <Form.Group as={Col} md="3" controlId="add-brewery-state">
-                        <Form.Label>State</Form.Label>
+                        <Form.Label>State or Country</Form.Label>
                         <Form.Control
                             type="text"
                             name="state"
                             value={this.state.state}
-                            onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group as={Col} md="3" controlId="add-brewery-country">
-                        <Form.Label>Country</Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="country"
-                            value={this.state.country}
                             onChange={this.handleChange} />
                     </Form.Group>
                 </Form.Row>

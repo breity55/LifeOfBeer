@@ -1,20 +1,49 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-
 import Header from './components/header';
-import AddBrewery from './components/add-brewery';
-import AddBeer from './components/add-beer';
+import Routes from './routes';
+import { Auth } from "aws-amplify";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isAuthenticated: false,
+      isAuthenticating: true
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      await Auth.currentSession();
+      this.userHasAuthenticated(true);
+    }
+    catch (e) {
+      if (e !== 'No current user') {
+        alert(e);
+      }
+    }
+
+    this.setState({ isAuthenticating: false });
+  }
+
+
+  userHasAuthenticated = authenticated => {
+    this.setState({ isAuthenticated: authenticated });
+  }
+
   render() {
+    const childProps = {
+      isAuthenticated: this.state.isAuthenticated,
+      userHasAuthenticated: this.userHasAuthenticated
+    };
+
     return (
+      !this.state.isAuthenticating &&
       <div className="app">
-        <Header />
+        <Header isAuthenticated={this.state.isAuthenticated} />
         <main className='app-main-container'>
-          <Switch>
-            <Route path='/Brewery/Add' component={AddBrewery} />
-            <Route path='/Beer/Add' component={AddBeer} />
-          </Switch>
+          <Routes childProps={childProps} />
         </main>
       </div>
     );
