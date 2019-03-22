@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Col } from 'react-bootstrap';
-import LoaderButton from './loader-button';
+import LoaderButton from '../loader-button';
 import { API } from "aws-amplify";
 
 export default class Beer extends Component {
@@ -117,7 +117,7 @@ export default class Beer extends Component {
         return (<div className="beer">
             {
                 this.state.beer && <Form className="update-beer" onSubmit={this.handleSubmit}>
-                    <h4>Add Beer</h4>
+                    <h4>{this.state.beerName}</h4>
                     <Form.Row>
                         <Form.Group as={Col} md="6" controlId="add-beer-brewery">
                             <Form.Label>Brewery</Form.Label>

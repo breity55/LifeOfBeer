@@ -11,18 +11,19 @@ export default class Header extends Component {
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="nav">
-                        {
-                            isAuthenticated
-                                ? <Nav.Link href="/beer/add">Add Beer</Nav.Link>
-                                : <Nav.Link href="/login">Login</Nav.Link>
-                        }
-
-                        {/* <Form inline>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                            <Button variant="outline-info">Search</Button>
-                        </Form> */}
-                    </Nav>
+                    {
+                        isAuthenticated ?
+                            <Nav className="nav">
+                                <Nav.Link href="/beer/add">Add Beer</Nav.Link>
+                                <Nav.Link href="/beer/approved">My Approved Beers</Nav.Link>
+                                <Nav.Link href="/beer/favorite">My Favorite Beers</Nav.Link>
+                                <Nav.Link href="/beer">My Beers</Nav.Link>
+                            </Nav>
+                            :
+                            <Nav className="nav">
+                                <Nav.Link href="/login">Login</Nav.Link>
+                            </Nav>
+                    }
                 </Navbar.Collapse>
                 <Navbar.Brand href="/">Life of Beer</Navbar.Brand>
             </Navbar>

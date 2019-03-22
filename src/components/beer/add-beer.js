@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Col } from 'react-bootstrap';
-import LoaderButton from './loader-button';
+import LoaderButton from '../loader-button';
 import { API } from "aws-amplify";
 
 class AddBeer extends Component {
@@ -71,7 +71,7 @@ class AddBeer extends Component {
             <Form className="add-brewery" onSubmit={this.handleSubmit}>
                 <h4>Add Beer</h4>
                 <Form.Row>
-                    <Form.Group as={Col} md="6" controlId="add-beer-brewery">
+                    <Form.Group as={Col} md="3" controlId="add-beer-brewery">
                         <Form.Label>Brewery</Form.Label>
                         <Form.Control
                             type="text"
@@ -79,7 +79,7 @@ class AddBeer extends Component {
                             value={this.state.breweryName}
                             onChange={this.handleChange} />
                     </Form.Group>
-                    <Form.Group as={Col} md="6" controlId="add-beer-brewery-location">
+                    <Form.Group as={Col} md="3" controlId="add-beer-brewery-location">
                         <Form.Label>Brewery Location</Form.Label>
                         <Form.Control
                             type="text"
@@ -87,9 +87,8 @@ class AddBeer extends Component {
                             value={this.state.breweryLocation}
                             onChange={this.handleChange} />
                     </Form.Group>
-                </Form.Row>
-                <Form.Row>
-                    <Form.Group as={Col} md="6" controlId="add-beer-name">
+
+                    <Form.Group as={Col} md="3" controlId="add-beer-name">
                         <Form.Label>Name</Form.Label>
                         <Form.Control
                             type="text"
@@ -97,7 +96,7 @@ class AddBeer extends Component {
                             value={this.state.beerName}
                             onChange={this.handleChange} />
                     </Form.Group>
-                    <Form.Group as={Col} md="6" controlId="add-beer-style">
+                    <Form.Group as={Col} md="3" controlId="add-beer-style">
                         <Form.Label>Style</Form.Label>
                         <Form.Control
                             type="text"
@@ -114,14 +113,14 @@ class AddBeer extends Component {
                         onChange={this.handleChange} />
                 </Form.Group>
                 <Form.Row>
-                    <Form.Group as={Col} md="6" controlId="add-brewery-approved-indicator">
+                    <Form.Group as={Col} md="3" controlId="add-brewery-approved-indicator">
                         <Form.Label>Approved?</Form.Label>
                         <div>
                             <Form.Check type="radio" inline label="True" checked={this.state.approvedIndicator === "true"} value={"true"} onChange={(e) => this.handleChange(e, "approvedIndicator")} />
                             <Form.Check type="radio" inline label="False" checked={this.state.approvedIndicator === "false"} value={"false"} onChange={(e) => this.handleChange(e, "approvedIndicator")} />
                         </div>
                     </Form.Group>
-                    <Form.Group as={Col} md="6" controlId="add-brewery-favorite-indicator">
+                    <Form.Group as={Col} md="3" controlId="add-brewery-favorite-indicator">
                         <Form.Label>Favorite?</Form.Label>
                         <div>
                             <Form.Check type="radio" inline label="True" checked={this.state.favoriteIndicator === "true"} value={"true"} onChange={(e) => this.handleChange(e, "favoriteIndicator")} />

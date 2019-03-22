@@ -1,20 +1,28 @@
 import React from "react";
 import { Switch } from "react-router-dom";
 import Home from "./components/home";
-import AddBeer from './components/add-beer';
 import Login from './components/login';
 import NotFound from './components/not-found';
 import AppliedRoute from './components/applied-route';
-import Beer from './components/beer';
 import AuthenticatedRoute from "./components/authenticated-route";
 import UnauthenticatedRoute from "./components/unauthenticated-route";
+
+import AddBeer from './components/beer/add-beer';
+import Beer from './components/beer/beer';
+import AllBeers from './components/beer/all-beers';
+import ApprovedBeers from './components/beer/approved-beers';
+import FavoriteBeers from './components/beer/favorite-beers';
+
 
 export default ({ childProps }) =>
     <Switch>
         <AppliedRoute path="/" exact component={Home} props={childProps} />
         <UnauthenticatedRoute path='/login' exact component={Login} props={childProps} />
         <AuthenticatedRoute path='/beer/add' exact component={AddBeer} props={childProps} />
+        <AuthenticatedRoute path='/beer/approved' exact component={ApprovedBeers} props={childProps} />
+        <AuthenticatedRoute path='/beer/favorite' exact component={FavoriteBeers} props={childProps} />
         <AuthenticatedRoute path='/beer/:id' exact component={Beer} props={childProps} />
+        <AuthenticatedRoute path='/beer/' exact component={AllBeers} props={childProps} />
 
         { /* Finally, catch all unmatched routes */}
         <AppliedRoute component={NotFound} />
