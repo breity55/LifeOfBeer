@@ -57,8 +57,8 @@ export default class Beer extends Component {
                 beerName: this.state.beerName,
                 beerStyle: this.state.beerStyle,
                 beerNotes: this.state.beerNotes,
-                approvedIndicator: (this.state.approvedIndicator === "true"),
-                favoriteIndicator: (this.state.favoriteIndicator === "true")
+                approvedIndicator: (this.state.approvedIndicator.toString() === "true"),
+                favoriteIndicator: (this.state.favoriteIndicator.toString() === "true")
             });
         } catch (e) {
             alert(e);

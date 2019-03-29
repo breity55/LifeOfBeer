@@ -1,6 +1,6 @@
 {
   "name": "life-of-beer-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "aws-amplify": "^1.1.22",
@@ -18,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "aws s3 sync build/ s3://life-of-beer-ui --delete"
+    "deploy": "aws s3 sync build/ s3://life-of-beer-ui --delete",
+    "postdeploy": "aws cloudfront create-invalidation --distribution-id EHMKAC61H7W6I --paths /*"
   },
   "eslintConfig": {
     "extends": "react-app"
