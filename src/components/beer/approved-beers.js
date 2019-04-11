@@ -25,7 +25,7 @@ export default class ApprovedBeers extends Component {
     }
 
     getApprovedBeers() {
-        return API.get("Beer", "");
+        return API.get("Beer", "/Approved");
     }
 
     render() {
