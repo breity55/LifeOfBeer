@@ -7,7 +7,7 @@ export default class BeerTable extends Component {
         const {
             beers
         } = this.props;
-        console.log(beers);
+
         return (
             <Table responsive>
                 <thead><tr>

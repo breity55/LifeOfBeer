@@ -12,6 +12,7 @@ import Beer from './components/beer/beer';
 import AllBeers from './components/beer/all-beers';
 import ApprovedBeers from './components/beer/approved-beers';
 import FavoriteBeers from './components/beer/favorite-beers';
+import SearchBeers from './components/beer/search-beers';
 
 
 export default ({ childProps }) =>
@@ -21,6 +22,7 @@ export default ({ childProps }) =>
         <AuthenticatedRoute path='/beer/add' exact component={AddBeer} props={childProps} />
         <AuthenticatedRoute path='/beer/approved' exact component={ApprovedBeers} props={childProps} />
         <AuthenticatedRoute path='/beer/favorite' exact component={FavoriteBeers} props={childProps} />
+        <AuthenticatedRoute path='/beer/search/:searchQuery' exact component={SearchBeers} props={childProps} />
         <AuthenticatedRoute path='/beer/:id' exact component={Beer} props={childProps} />
         <AuthenticatedRoute path='/beer/' exact component={AllBeers} props={childProps} />
 
