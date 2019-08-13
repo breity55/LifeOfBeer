@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Form, Button } from 'react-bootstrap'
-import {
-    withRouter
-} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class Header extends Component {
     constructor(props) {
@@ -34,22 +32,23 @@ class Header extends Component {
                 {
                     isAuthenticated ?
                         <Navbar.Collapse id="responsive-navbar-nav">
+                            <Form inline onSubmit={this.onSearchSubmit}>
+                                <Form.Control type="text" placeholder="Search" className="mr-sm-2" value={this.state.searchQuery} onChange={this.handleSearchChange} />
+                                <Button variant="outline-info" type="submit">Search</Button>
+                            </Form>
                             <Nav className="nav">
                                 <Nav.Link href="/beer/add">Add Beer</Nav.Link>
                                 <Nav.Link href="/beer/approved">My Approved Beers</Nav.Link>
                                 <Nav.Link href="/beer/favorite">My Favorite Beers</Nav.Link>
                                 <Nav.Link href="/beer">My Beers</Nav.Link>
                             </Nav>
-                            <Form inline onSubmit={this.onSearchSubmit}>
-                                <Form.Control type="text" placeholder="Search" className="mr-sm-2" value={this.state.searchQuery} onChange={this.handleSearchChange} />
-                                <Button variant="outline-info" type="submit">Search</Button>
-                            </Form>
                         </Navbar.Collapse>
                         :
                         <Nav className="nav">
                             <Nav.Link href="/login">Login</Nav.Link>
                         </Nav>
                 }
+
                 <Navbar.Brand href="/">Life of Beer</Navbar.Brand>
             </Navbar>
         );

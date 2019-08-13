@@ -16,7 +16,6 @@ export default class SearchBeers extends Component {
     async componentDidMount() {
         try {
             const beers = await this.getSearchBeers();
-            console.log(beers);
             this.setState({ beers });
         } catch (e) {
             alert(e);
