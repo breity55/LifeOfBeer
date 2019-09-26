@@ -13,12 +13,13 @@ import AllBeers from './components/beer/all-beers';
 import ApprovedBeers from './components/beer/approved-beers';
 import FavoriteBeers from './components/beer/favorite-beers';
 import SearchBeers from './components/beer/search-beers';
-
+// import ResetPassword from './components/reset-password';
 
 export default ({ childProps }) =>
     <Switch>
         <AppliedRoute path="/" exact component={Home} props={childProps} />
         <UnauthenticatedRoute path='/login' exact component={Login} props={childProps} />
+        {/* <UnauthenticatedRoute path='/login/reset' exact component={ResetPassword} props={childProps} /> */}
         <AuthenticatedRoute path='/beer/add' exact component={AddBeer} props={childProps} />
         <AuthenticatedRoute path='/beer/approved' exact component={ApprovedBeers} props={childProps} />
         <AuthenticatedRoute path='/beer/favorite' exact component={FavoriteBeers} props={childProps} />

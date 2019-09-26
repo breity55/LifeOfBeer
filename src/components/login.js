@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form } from 'react-bootstrap';
 import { Auth } from "aws-amplify";
 import LoaderButton from '../components/loader-button';
+import { Link } from 'react-router-dom';
 
 export default class Login extends Component {
     constructor(props) {
@@ -49,6 +50,7 @@ export default class Login extends Component {
                         <Form.Label>Password</Form.Label>
                         <Form.Control value={this.state.password} onChange={this.handleChange} type="password" />
                     </Form.Group>
+                    <Link to="/login/reset">Forgot password?</Link>
                     <LoaderButton
                         block
                         disabled={!this.validateForm()}

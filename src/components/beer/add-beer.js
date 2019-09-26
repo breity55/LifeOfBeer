@@ -7,7 +7,7 @@ class AddBeer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            breweryName: '', breweryLocation: '', beerName: '', beerStyle: '', beerNotes: '',
+            breweryName: '', breweryLocation: '', beerName: '', beerStyle: '', beerNotes: '  ',
             approvedIndicator: "false", favoriteIndicator: "false", isLoading: false
         };
     }
@@ -73,11 +73,7 @@ class AddBeer extends Component {
                 <Form.Row>
                     <Form.Group as={Col} md="3" controlId="add-beer-brewery">
                         <Form.Label>Brewery</Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="breweryName"
-                            value={this.state.breweryName}
-                            onChange={this.handleChange} />
+                        <Form.Control type="text" name="breweryName" value={this.state.breweryName} onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group as={Col} md="3" controlId="add-beer-brewery-location">
                         <Form.Label>Brewery Location</Form.Label>
@@ -90,27 +86,16 @@ class AddBeer extends Component {
 
                     <Form.Group as={Col} md="3" controlId="add-beer-name">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="beerName"
-                            value={this.state.beerName}
-                            onChange={this.handleChange} />
+                        <Form.Control type="text" name="beerName" value={this.state.beerName} onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group as={Col} md="3" controlId="add-beer-style">
                         <Form.Label>Style</Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="beerStyle"
-                            value={this.state.beerStyle}
-                            onChange={this.handleChange} />
+                        <Form.Control type="text" name="beerStyle" value={this.state.beerStyle} onChange={this.handleChange} />
                     </Form.Group>
                 </Form.Row>
                 <Form.Group controlId="add-brewery-notes">
                     <Form.Label>Notes</Form.Label>
-                    <Form.Control as="textarea" rows="3"
-                        name="beerNotes"
-                        value={this.state.beerNotes}
-                        onChange={this.handleChange} />
+                    <Form.Control as="textarea" rows="3" name="beerNotes" value={this.state.beerNotes} onChange={this.handleChange} />
                 </Form.Group>
                 <Form.Row>
                     <Form.Group as={Col} md="3" controlId="add-brewery-approved-indicator">
@@ -128,13 +113,7 @@ class AddBeer extends Component {
                         </div>
                     </Form.Group>
                 </Form.Row>
-                <LoaderButton
-                    block
-                    type="submit"
-                    isLoading={this.state.isLoading}
-                    text="Add"
-                    loadingText="Adding…"
-                />
+                <LoaderButton block type="submit" isLoading={this.state.isLoading} text="Add" loadingText="Adding…" />
             </Form >
         );
     }

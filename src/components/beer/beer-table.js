@@ -8,26 +8,30 @@ export default class BeerTable extends Component {
             beers
         } = this.props;
 
+        const sortedBeers = beers.slice().sort((a, b) => b.createdDate - a.createdDate)
+
         return (
             <Table responsive>
                 <thead><tr>
                     <th>Name</th>
                     <th>Style</th>
                     <th>Brewery</th>
-                    {/* <th>Notes</th> */}
                 </tr></thead>
                 {
-                    beers && beers.length > 0
+                    sortedBeers && sortedBeers.length > 0
                         ?
                         <tbody>
                             {
-                                beers.map((beer, index) => {
+                                sortedBeers.map((beer, index) => {
                                     return (
                                         <tr key={index}>
-                                            <td><Link to={`/beer/${beer.beerId}`}>{beer.beerName}</Link></td>
+                                            <td>
+                                                <Link to={`/beer/${beer.beerId}`}>{beer.beerName}</Link>
+                                                {beer.approvedIndicator ? <img src="/images/check-icon.png" alt="approved" hspace="2.5" /> : null}
+                                                {beer.favoriteIndicator ? <img src="/images/star-icon.png" alt="favorite" hspace="2.5" /> : null}
+                                            </td>
                                             <td>{beer.beerStyle}</td>
                                             <td>{beer.breweryName + ' (' + beer.breweryLocation + ')'}</td>
-                                            {/* <td>{beer.beerNotes}</td> */}
                                         </tr>
                                     );
                                 })
