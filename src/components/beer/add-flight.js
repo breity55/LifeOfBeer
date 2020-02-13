@@ -68,7 +68,7 @@ export default class AddFlight extends Component {
             await API.post("Beer", "/Flight", {
                 body: this.state.beers
             });
-            this.props.history.push("/Beer/");
+            this.props.history.push(`/Beer/Search/${this.state.flightBrewery}`);
         } catch (e) {
             alert(e);
             this.setState({ isLoading: false });
@@ -112,8 +112,14 @@ export default class AddFlight extends Component {
                         <Button variant="info" size="md" block onClick={this.handleOnBreweryNext}>Next</Button>
                     </Form.Row>
                 </div>
-                {
-                    this.state.beers.map((beer, index) => {
+                {(this.state.beers.length === 0)
+                    ?
+                    <div className="flight-beer-section" hidden={this.state.hideFlightBeerSection}>
+                        <Button variant="primary" size="md" block onClick={this.handleAddBeer} hidden={this.state.hideFlightBeerSection}>
+                            Add Another
+                        </Button>
+                    </div>
+                    : this.state.beers.map((beer, index) => {
                         return (
                             <div className="flight-beer-section" hidden={this.state.hideFlightBeerSection}>
                                 <Form.Row>
