@@ -37,7 +37,8 @@ class Header extends Component {
                                 <Button variant="outline-info" type="submit">Search</Button>
                             </Form>
                             <Nav className="nav">
-                                <Nav.Link href="/beer/add">Add Beer</Nav.Link>
+                                <Nav.Link href="/beer/add">Add A Beer</Nav.Link>
+                                <Nav.Link href="/beer/add/flight">Add A Flight</Nav.Link>
                                 <Nav.Link href="/beer/approved">My Approved Beers</Nav.Link>
                                 <Nav.Link href="/beer/favorite">My Favorite Beers</Nav.Link>
                                 <Nav.Link href="/beer">My Beers</Nav.Link>

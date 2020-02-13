@@ -13,6 +13,7 @@ import AllBeers from './components/beer/all-beers';
 import ApprovedBeers from './components/beer/approved-beers';
 import FavoriteBeers from './components/beer/favorite-beers';
 import SearchBeers from './components/beer/search-beers';
+import AddFlight from './components/beer/add-flight';
 // import ResetPassword from './components/reset-password';
 
 export default ({ childProps }) =>
@@ -21,6 +22,7 @@ export default ({ childProps }) =>
         <UnauthenticatedRoute path='/login' exact component={Login} props={childProps} />
         {/* <UnauthenticatedRoute path='/login/reset' exact component={ResetPassword} props={childProps} /> */}
         <AuthenticatedRoute path='/beer/add' exact component={AddBeer} props={childProps} />
+        <AuthenticatedRoute path='/beer/add/flight' exact component={AddFlight} props={childProps} />
         <AuthenticatedRoute path='/beer/approved' exact component={ApprovedBeers} props={childProps} />
         <AuthenticatedRoute path='/beer/favorite' exact component={FavoriteBeers} props={childProps} />
         <AuthenticatedRoute path='/beer/search/:searchQuery' exact component={SearchBeers} props={childProps} />

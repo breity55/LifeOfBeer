@@ -23,19 +23,19 @@ class AddBeer extends Component {
         event.preventDefault();
 
         if (this.isFieldNull(this.state.breweryName)) {
-            alert("Please enter a Brewery!");
+            alert("A brewery name is required.");
             return;
         }
         else if (this.isFieldNull(this.state.breweryLocation)) {
-            alert("Please enter a Brewery Location!");
+            alert("A brewery location is required.");
             return;
         }
         else if (this.isFieldNull(this.state.beerName)) {
-            alert("Please enter a Name!");
+            alert("A beer name is required.");
             return;
         }
         else if (this.isFieldNull(this.state.beerStyle)) {
-            alert("Please enter a Style!");
+            alert("A beer style is required.");
             return;
         }
 

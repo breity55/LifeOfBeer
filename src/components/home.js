@@ -17,7 +17,8 @@ export default class Home extends Component {
     renderAuthorizedLander() {
         return (
             <div>
-                <p><Link to="/beer/add">Add Beer</Link></p>
+                <p><Link to="/beer/add">Add A Beer</Link></p>
+                <p><Link to="/beer/add/flight">Add A Flight</Link></p>
                 <p><Link to="/beer/approved">My Approved Beers</Link></p>
                 <p><Link to="/beer/favorite">My Favorite Beers</Link></p>
                 <p><Link to="/beer">My Beers</Link></p>
