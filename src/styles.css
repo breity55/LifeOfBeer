@@ -3,6 +3,10 @@
   width: 100vw;
 }
 
+body {
+  background-color:#eee;
+}
+
 .app-main-container {
   padding: 20px;
 }
@@ -35,4 +39,14 @@
     margin: 0 auto;
     max-width: 320px;
   }
+}
+
+.flight-beer-section {
+  border-bottom: 2px solid gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.flight-button-pane {
+  padding-top: 10px;
 }

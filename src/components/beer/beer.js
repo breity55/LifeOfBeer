@@ -84,7 +84,7 @@ export default class Beer extends Component {
 
         try {
             await this.deleteBeer();
-            this.props.history.push("/");
+            this.props.history.push("/beer/");
         } catch (e) {
             alert(e);
             this.setState({ isDeleting: false });
