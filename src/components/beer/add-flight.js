@@ -115,7 +115,7 @@ export default class AddFlight extends Component {
                 {(this.state.beers.length === 0)
                     ?
                     <div className="flight-beer-section" hidden={this.state.hideFlightBeerSection}>
-                        <Button variant="primary" size="md" block onClick={this.handleAddBeer} hidden={this.state.hideFlightBeerSection}>
+                        <Button variant="info" size="md" block onClick={this.handleAddBeer} hidden={this.state.hideFlightBeerSection}>
                             Add Another
                         </Button>
                     </div>
@@ -157,14 +157,14 @@ export default class AddFlight extends Component {
                                 <Button variant="danger" size="md" block onClick={this.handleRemoveBeer(index)}>Remove</Button>
                                 {
                                     (index === (this.state.beers.length - 1))
-                                        ? <Button variant="primary" size="md" block onClick={this.handleAddBeer}>Add Another</Button>
+                                        ? <Button variant="info" size="md" block onClick={this.handleAddBeer}>Add Another</Button>
                                         : ""
                                 }
                             </div>)
                     })
                 }
                 <div className="flight-button-pane" hidden={this.state.hideFlightButtonPane}>
-                    <LoaderButton block type="submit" size="lg" isLoading={this.state.isLoading} text="Save Flight" loadingText="Saving…" />
+                    <LoaderButton block type="submit" size="lg" isLoading={this.state.isLoading} text="Save Flight" loadingText="Saving…" variant="info" />
                 </div>
             </Form >
         );

@@ -113,7 +113,7 @@ class AddBeer extends Component {
                         </div>
                     </Form.Group>
                 </Form.Row>
-                <LoaderButton block type="submit" isLoading={this.state.isLoading} text="Add" loadingText="Adding…" />
+                <LoaderButton block type="submit" isLoading={this.state.isLoading} text="Add" loadingText="Adding…" variant="info" />
             </Form >
         );
     }

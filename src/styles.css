@@ -1,6 +1,7 @@
 .app {
   height: 100vh;
   width: 100vw;
+  font-family: Lucida Bright,Georgia,serif;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
 }
 
 .home .lander h1 {
-  font-family: "Open Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
   font-weight: 600;
 }
 
@@ -37,7 +38,7 @@ body {
 
   .login form {
     margin: 0 auto;
-    max-width: 320px;
+    max-width: 320px; 
   }
 }
 
@@ -49,4 +50,12 @@ body {
 
 .flight-button-pane {
   padding-top: 10px;
+}
+
+.btn-danger {
+  background: #9b111e
+}
+
+.btn-primary {
+  background-color: rgb(59, 141, 189);
 }

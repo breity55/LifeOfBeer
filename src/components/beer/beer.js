@@ -177,7 +177,7 @@ export default class Beer extends Component {
                             </div>
                         </Form.Group>
                     </Form.Row>
-                    <LoaderButton block type="submit" isLoading={this.state.isLoading} text="Save" loadingText="Saving…" />
+                    <LoaderButton block type="submit" isLoading={this.state.isLoading} text="Save" loadingText="Saving…" variant="info" />
                     <LoaderButton block variant="danger" isLoading={this.state.isDeleting} onClick={this.handleDelete} text="Delete" loadingText="Deleting…" />
                 </Form >
             }

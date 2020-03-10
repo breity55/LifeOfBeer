@@ -58,6 +58,7 @@ export default class Login extends Component {
                         isLoading={this.state.isLoading}
                         text="Login"
                         loadingText="Logging in…"
+                        variant="info"
                     />
                 </form>
             </div>

@@ -90,6 +90,7 @@ export default class ResetPassword extends Component {
                     text="Send Confirmation"
                     isLoading={this.state.isSendingCode}
                     disabled={!this.validateCodeForm()}
+                    variant="info"
                 />
             </form>
         );
@@ -136,6 +137,7 @@ export default class ResetPassword extends Component {
                     loadingText="Confirm…"
                     isLoading={this.state.isConfirming}
                     disabled={!this.validateResetForm()}
+                    variant="info"
                 />
             </form>
         );
