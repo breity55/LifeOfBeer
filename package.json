@@ -17,10 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "aws s3 sync build/ s3://life-of-beer-ui --delete",
-    "postdeploy": "aws cloudfront create-invalidation --distribution-id EHMKAC61H7W6I --paths /*"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
